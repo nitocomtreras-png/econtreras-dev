@@ -1,0 +1,160 @@
+/* --- Importación de Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+/* --- Variables de Color (para un código limpio y mantenible) --- */
+:root {
+    --color-primario: #2C3E50; /* Azul Oscuro */
+    --color-secundario: #FFFFFF; /* Blanco */
+    --color-fondo-claro: #F4F4F4;
+    --color-acento: #18BC9C; /* Turquesa */
+    --color-texto: #333333; /* Gris para texto */
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-cuerpo: 'Lato', sans-serif;
+}
+
+/* --- Estilos Globales --- */
+body {
+    margin: 0;
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primario);
+}
+
+.seccion {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.seccion--oscura {
+    background-color: var(--color-primario);
+}
+
+.seccion--oscura h2, .seccion--oscura p {
+    color: var(--color-secundario);
+}
+
+.seccion__titulo {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero__titulo {
+    color: var(--color-secundario);
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero__subtitulo {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero__cta-principal {
+    background-color: var(--color-acento);
+    color: var(--color-secundario);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero__cta-principal:hover {
+    background-color: #15a589;
+    color: var(--color-secundario);
+}
+
+/* --- Servicios --- */
+.servicios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-card {
+    background: var(--color-secundario);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+/* --- Footer --- */
+.sitio-footer {
+    background-color: #233140; /* Un tono más oscuro del primario */
+    color: var(--color-secundario);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer__titulo {
+    color: var(--color-secundario);
+}
+
+.footer__cta {
+    font-family: var(--fuente-titulos);
+    font-size: 1.1em;
+}
+
+/* --- Estilos para Diseño Adaptable (Responsive) --- */
+/* Se aplicarán en pantallas de 768px de ancho o menos (tablets y móviles) */
+
+@media (max-width: 768px) {
+    
+    /* Ajustamos los títulos para que no sean tan grandes en pantallas pequeñas */
+    .hero__titulo {
+        font-size: 2.2em;
+    }
+
+    .seccion__titulo {
+        font-size: 2em;
+    }
+
+    /* Hacemos que la grilla de servicios se convierta en una columna vertical */
+    .servicios-grid {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes aún más finos para teléfonos móviles */
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero__titulo {
+        font-size: 1.8em;
+    }
+
+    .hero__subtitulo {
+        font-size: 1em;
+    }
+}
