@@ -1,7 +1,7 @@
 /* --- Importación de Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
 
-/* --- Variables de Color (para un código limpio y mantenible) --- */
+/* --- Variables de Color --- */
 :root {
     --color-primario: #2C3E50; /* Azul Oscuro */
     --color-secundario: #FFFFFF; /* Blanco */
@@ -19,158 +19,108 @@ body {
     color: var(--color-texto);
     line-height: 1.6;
 }
-
 h1, h2, h3 {
     font-family: var(--fuente-titulos);
     color: var(--color-primario);
     margin-top: 0;
 }
-
 a {
     color: var(--color-acento);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 a:hover {
     color: var(--color-primario);
 }
 
-.seccion {
-    padding: 60px 20px;
-    text-align: center;
+/* --- HEADER Y NAVEGACIÓN ADAPTABLE --- */
+.sitio-header {
+    background-color: var(--color-secundario);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
-.seccion--oscura {
-    background-color: var(--color-primario);
-}
-
-.seccion--oscura h2, .seccion--oscura p {
-    color: var(--color-secundario);
-}
-
-.seccion__titulo {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-/* --- Hero Section --- */
-.hero {
-    background-color: var(--color-primario);
-    color: var(--color-secundario);
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero__titulo {
-    color: var(--color-secundario);
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.hero__subtitulo {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.hero__cta-principal {
-    background-color: var(--color-acento);
-    color: var(--color-secundario);
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-family: var(--fuente-titulos);
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.hero__cta-principal:hover {
-    background-color: #15a589;
-    color: var(--color-secundario);
-}
-
-/* --- Servicios --- */
-.servicios-grid {
+.navegacion {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 15px 20px;
 }
-
-.servicio-card {
-    background: var(--color-secundario);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    flex: 1;
+.navegacion__logo {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--color-primario);
 }
-
-/* --- Footer --- */
-.sitio-footer {
-    background-color: #233140; /* Un tono más oscuro del primario */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navegacion__cta {
+    background-color: var(--color-acento);
     color: var(--color-secundario);
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.footer__titulo {
-    color: var(--color-secundario);
-}
-
-.footer__cta {
-    font-family: var(--fuente-titulos);
-    font-size: 1.1em;
-}
-
-/* --- Estilos para Diseño Adaptable (Responsive) --- */
-/* Se aplicarán en pantallas de 768px de ancho o menos (tablets y móviles) */
-
-@media (max-width: 768px) {
-    
-    /* Ajustamos los títulos para que no sean tan grandes en pantallas pequeñas */
-    .hero__titulo {
-        font-size: 2.2em;
-    }
-
-    .seccion__titulo {
-        font-size: 2em;
-    }
-
-    /* Hacemos que la grilla de servicios se convierta en una columna vertical */
-    .servicios-grid {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ajustes aún más finos para teléfonos móviles */
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero__titulo {
-        font-size: 1.8em;
-    }
-
-    .hero__subtitulo {
-        font-size: 1em;
-    }
-}
-.cta-caso-estudio {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #18BC9C; /* Color de acento de tu portafolio */
-    color: white;
+    padding: 8px 16px;
     border-radius: 5px;
-    text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
-
-.cta-caso-estudio:hover {
+.navegacion__cta:hover {
     background-color: #15a589;
-    color: white;
+    color: var(--color-secundario);
+}
+
+/* Botón de Hamburguesa */
+.nav-toggle { display: none; }
+.hamburger { display: block; position: relative; width: 24px; height: 2px; background: var(--color-texto); }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; background: var(--color-texto); }
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* --- Secciones --- */
+.seccion { padding: 80px 20px; text-align: center; }
+.seccion--oscura { background-color: var(--color-primario); color: var(--color-secundario); }
+.seccion--oscura h2 { color: var(--color-secundario); }
+.seccion__titulo { font-size: 2.8em; margin-bottom: 50px; }
+
+/* --- Hero Section --- */
+.hero { padding: 100px 20px; }
+.hero__titulo { font-size: 3.5em; margin-bottom: 15px; }
+.hero__subtitulo { font-size: 1.3em; margin-bottom: 40px; opacity: 0.9; max-width: 700px; margin-left: auto; margin-right: auto;}
+.hero__cta-principal { padding: 15px 35px; border-radius: 30px; font-weight: bold; font-size: 1.1em; }
+
+/* --- Servicios --- */
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.servicio-card { background: var(--color-secundario); padding: 40px 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+.portafolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+.portafolio__caso-estudio { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.portafolio__caso-estudio:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.portafolio__caso-estudio img { max-width: 100%; border-radius: 5px; margin-bottom: 15px; }
+.portafolio__caso-estudio h3, .portafolio__caso-estudio p { color: var(--color-texto); }
+
+/* --- Footer --- */
+.sitio-footer { background-color: #233140; padding: 60px 20px; }
+.footer__titulo { color: var(--color-secundario); font-size: 2em; }
+
+/* --- RESPONSIVIDAD DEL MENÚ --- */
+@media (max-width: 768px) {
+    .nav-toggle { display: block; background: transparent; border: 0; cursor: pointer; padding: 10px; z-index: 1001; }
+    .nav-menu { position: fixed; top: 0; right: 0; height: 100vh; width: 250px; background: var(--color-fondo-claro); flex-direction: column; align-items: center; justify-content: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+    .nav-menu.is-visible { transform: translateX(0); }
+    .nav-menu li { width: 100%; text-align: center; }
+    .nav-menu a { display: block; padding: 20px 0; width: 100%; }
+
+    /* Animación hamburguesa a 'X' */
+    .nav-open .hamburger { background: transparent; }
+    .nav-open .hamburger::before { transform: rotate(45deg) translate(5px, 6px); }
+    .nav-open .hamburger::after { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Estilos generales responsivos */
+    .hero__titulo { font-size: 2.5em; }
+    .seccion__titulo { font-size: 2.2em; }
 }
